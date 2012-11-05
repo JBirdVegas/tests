@@ -145,16 +145,16 @@
 "committer_name": "Petr Reznicek"
 },
 {
-"body": "d2vzw: move bootanimation stuff to d2-common\n\nChange-Id: I037710932bd08841f352c0af4e7e4cfd3a694a23\n\n",
+"body": "d2vzw: fix typo in extract-files.sh\n\nSigned-off-by: BMc08GT <bmc08gt.teamb00sted@gmail.com>\n\n723c98be12038f472c78731a610d3090334df2b6",
 "team_credit": "AOKP",
-"subject": "d2vzw: move bootanimation stuff to d2-common",
-"author_date": "Wed Oct 17 21:59:50 2012 -0400",
-"author_name": "PhantomGamers",
+"subject": "d2vzw: fix typo in extract-files.sh",
+"author_date": "Thu Nov 1 15:34:47 2012 -0400",
+"author_name": "BMc08GT",
 "path": "device_samsung_d2vzw",
-"committer_date": "Wed Oct 17 21:59:50 2012 -0400",
-"commit_hash": "\n723c98be12038f472c78731a610d3090334df2b6",
-"parent_hashes": "1b2c35a691b830148eb2b194416f39adb495029c",
-"committer_name": "PhantomGamers"
+"committer_date": "Thu Nov 1 15:34:47 2012 -0400",
+"commit_hash": "\nad1b44149139bacf878c678a6a81e6cc05efd29d",
+"parent_hashes": "723c98be12038f472c78731a610d3090334df2b6",
+"committer_name": "BMc08GT"
 },
 {
 "body": "add hardware info\n\nPS2: front cam has 2MP\n\nChange-Id: I97c938316a2abce9778f2eaed563fb7a4d8494d1\nSigned-off-by: Dirk Rettschlag <dirk.rettschlag@gmail.com>\n\n",
@@ -253,15 +253,15 @@
 "committer_name": "rohan"
 },
 {
-"body": "msm8960-common: use newer video properties\n\nChange-Id: I77893875ad406d47c82359af065d579a848b7c20\n\ndc7a8686cd2838de9b0635e880f0db6bb832703e",
+"body": "msm8960: switch to gpu to avoid artifacting\n\nChange-Id: I7834113a50c6b7f4fd79a5f81b137869f42b1247\n\na189370ad75b07b08329b71dbbb286f69757b2aa",
 "team_credit": "AOKP",
-"subject": "msm8960-common: use newer video properties",
-"author_date": "Wed Oct 10 21:28:21 2012 -0700",
-"author_name": "Ethan Chen",
+"subject": "msm8960: switch to gpu to avoid artifacting",
+"author_date": "Sat Nov 3 20:46:02 2012 -0400",
+"author_name": "rohan",
 "path": "android_device_htc_msm8960-common",
-"committer_date": "Sat Oct 27 08:56:35 2012 -0400",
-"commit_hash": "\nf7f6c2e609133f2d0e01ce03097ef7d344cf5cb4",
-"parent_hashes": "dc7a8686cd2838de9b0635e880f0db6bb832703e",
+"committer_date": "Sat Nov 3 20:47:32 2012 -0400",
+"commit_hash": "\n77a8a043e993d61d33b7b2d66b3b168ac467994b",
+"parent_hashes": "a189370ad75b07b08329b71dbbb286f69757b2aa",
 "committer_name": "rohan"
 },
 {
@@ -349,6 +349,18 @@
 "committer_name": "Steve Kondik"
 },
 {
+"body": "ThemeManager: Simplified Chinese Translations\n\nAdded Simplified Chinese translations for Themes provider.\n(Not sure why it's ThemeManager but the app itself is called\nThemes provider....)\n\nPatch Set 2: Fixed description.\n\nPatch Set 3: Some revision.\n\nChange-Id: I0c41cf63a25d9bef174f1f3c277e1c221001f67b\n\n",
+"team_credit": "CyanogenMod",
+"subject": "ThemeManager: Simplified Chinese Translations",
+"author_date": "Tue Oct 30 19:06:43 2012 -0400",
+"author_name": "Andrew Jiang",
+"path": "android_vendor_tmobile_providers_ThemeManager",
+"committer_date": "Tue Oct 30 21:07:06 2012 -0400",
+"commit_hash": "\n5e4ebc5aea09073c8e0bea65d96c1dba2c2832fd",
+"parent_hashes": "e5d56955584903c31766bd8f24fd978518fcc490",
+"committer_name": "Andrew Jiang"
+},
+{
 "body": "i9300: downgrade wifi blobs to LG8\n\nd95e8999d0de0cd398e0ce81972d7127bcdf2220",
 "team_credit": "AOKP",
 "subject": "i9300: downgrade wifi blobs to LG8",
@@ -379,10 +391,22 @@
 "author_date": "Wed Oct 31 15:54:52 2012 -0400",
 "author_name": "JBirdVegas",
 "path": "pseudo_buildbot",
-"committer_date": "Wed Oct 31 16:12:19 2012 -0400",
-"commit_hash": "\n196fd8be0649af5914aef654f69b82ae3b0475c4",
+"committer_date": "Mon Nov 5 13:07:45 2012 -0500",
+"commit_hash": "\nc18510e8c9c08d19dd475d7cb96bfea8917b7c2c",
 "parent_hashes": "10cd4135eff5abd0eddb8d35a5612c93ca4fd3cb",
 "committer_name": "JBirdVegas"
+},
+{
+"body": "Add group mms threading (3/3)\n\nChange-Id: I624b5f6d9bfadb6596b50e6041caa97cab390d84\n\n",
+"team_credit": "AOKP",
+"subject": "Add group mms threading (3/3)",
+"author_date": "Sat Oct 6 15:59:05 2012 -0500",
+"author_name": "Vivek Vasani",
+"path": "packages_providers_TelephonyProvider",
+"committer_date": "Tue Oct 16 18:43:35 2012 -0400",
+"commit_hash": "\na212a14ec2d2129963891215c64598ccbbe7040a",
+"parent_hashes": "6ee7d78f71526bb631a7a6a6ea308d7927b2b4a1",
+"committer_name": "PhantomGamers"
 },
 {
 "body": "Torch: allow launching the app from Shortcuts --> Activities\n\nPS2: fix whitespaces\nPS3: fix action\n\nThis adds an intent-filter to the Torch app manifest to allow\nit to be launched and used from places other than the notification\ntoggle\n\nChange-Id: Iab9d89583cd74ec08266c68a942dc9d744f385b2\nSigned-off-by: Boris Bershadskiy <borisb13@gmail.com>\n\nd04796e2ab5ed41bdb872bc2c32b6eef5bdaead2",
@@ -457,28 +481,28 @@
 "committer_name": "Petr Reznicek"
 },
 {
-"body": "Hungarian translations by Klasszsrac\n\nChange-Id: I61bfd10498059274689271827ff599ecda38ef39\nSigned-off-by: Gergely Szell <sethyx@gmail.com>\n\ndfa57356ee3a46fa3aee0e9bb09dac3ae916561b",
+"body": "Add group mms threading (1/3)\n\nConflicts:\n\nres/values/strings.xml\nsrc/com/android/mms/ui/MessagingPreferenceActivity.java\n\nPatch 3:Clean up and correction\nPatch 4:Code fixes from http://r.cyanogenmod.com/#/c/24474/ - Dan Pasanen\n\nChange-Id: If33ffe9e21462b07fb092a5e5d366d6e69c6c3d6\n\ndda8cd52c9c27f0321c62875e5f979870aa8fa9d",
 "team_credit": "AOKP",
-"subject": "Hungarian translations by Klasszsrac",
-"author_date": "Fri Oct 19 23:20:16 2012 +0200",
-"author_name": "Gergely Szell",
+"subject": "Add group mms threading (1/3)",
+"author_date": "Sat Oct 6 15:54:51 2012 -0500",
+"author_name": "Vivek Vasani",
 "path": "packages_apps_Mms",
-"committer_date": "Fri Oct 19 23:20:16 2012 +0200",
-"commit_hash": "\ndda8cd52c9c27f0321c62875e5f979870aa8fa9d",
-"parent_hashes": "f75e10904604472715206cb5f510cd205b070513",
-"committer_name": "Gergely Szell"
+"committer_date": "Thu Nov 1 21:26:16 2012 -0500",
+"commit_hash": "\nabb358c3a2e3b0035fa5c0e47f2865d899d7f73c",
+"parent_hashes": "dda8cd52c9c27f0321c62875e5f979870aa8fa9d",
+"committer_name": "ak"
 },
 {
-"body": "Weather: options to hide Weather Panel\n\n3 options\n1) always on\n2) Hide with toggles\n3) always opposite toggles\n\nRebased off new weather actions.\n\nPS2: missing bracket here too\n\nChange-Id: I6aa563bac225e5e6b6a8004515086c79dbb5679c\n\n038067b7cf5472f3deb5103ecf0f47fe9fa2f06c",
+"body": "DynamicChangelog: DO NOT MERGE\n\nParse api.github.com's json output to formulate a changelog since last\nrelease to goo.im\n\nTODOs: too many calls to api.github.com will result in forbidden responce\nwe need to address this with a dialog\n: commit list is failing to track new which commits to show correctly\n: add wakelock while searching\n: handle backbutton press with navigation instead of dropping to calling class\n: Drawables need propper dpi versions\n: General performance: searching 200+ repos is slow\nit would be nice to find a quicker way but APIs are limited\n\nChange-Id: I656d6a322bdad2dcde917543669056698c47fa4f\n\n529b3f413184d9025bb5400855e7661fce4ce484",
 "team_credit": "AOKP",
-"subject": "Weather: options to hide Weather Panel",
-"author_date": "Sun Oct 28 15:19:11 2012 -0400",
-"author_name": "Stevespear426",
+"subject": "DynamicChangelog: DO NOT MERGE",
+"author_date": "Mon Oct 29 19:03:24 2012 -0400",
+"author_name": "JBirdVegas",
 "path": "packages_apps_ROMControl",
-"committer_date": "Mon Oct 29 09:43:16 2012 -0400",
-"commit_hash": "\n529b3f413184d9025bb5400855e7661fce4ce484",
-"parent_hashes": "038067b7cf5472f3deb5103ecf0f47fe9fa2f06c",
-"committer_name": "Stevespear426"
+"committer_date": "Mon Nov 5 12:39:13 2012 -0500",
+"commit_hash": "\n401ba0e3495d11fa220a107bb3d0c05ae970bf48",
+"parent_hashes": "8983092c61bbbdc7b18a368f9d4446d08a15e103",
+"committer_name": "JBirdVegas"
 },
 {
 "body": "suppress build warning: Default Localization\n\nsuppress build time warning 'no default or required localization'\n\nChange-Id: I134af00c324067f9248164053d2025a90501dfa5\n\n5c94f1c3b1527cf60749139181ef9f2a57413c09",
@@ -505,27 +529,27 @@
 "committer_name": "JBirdVegas"
 },
 {
-"body": "WeatherPanel: Add options to hide weather panel\n\n3 options\n1) always on\n2) Hide with toggles\n3) always opposite toggles\n\nanimations are fun. :-)\n\nPS2: weathergoneonboot should be 2.\n\nPS3: put panel check back in update settings in case user turns panel off.\n\nPS4: rebased off the new weather panel actions.\n\nPS5: missing bracket\n\nChange-Id: I9c1a88a7ebc5a05a5baa927576d3b74f8e1d23c1\n\nc069ebf697f4bbc3d80965c136a7ee84cd79b0f7",
+"body": "Suppress String resources build warnings\n\nwarnings suppressed are:\naapt: warning: **** string '%s' has no default or required localization for\naapt: warning: string '%s' has no default translation in\n\nPatch Set 2: move ifdef and only suppress warnings for packages that\ndefine NO_DEFAULT_TRANSLATION_WARNINGS and/or\nNO_LOCALIZATION_WARNING\n\nPatch Set 3: by default do not show warnings unless\nSHOW_DEFAULT_TRANSLATION_WARNINGS and/or\nSHOW_LOCALIZATION_WARNINGS\n\nChange-Id: I50ef2a623959a1cc53053b446328df8e34cc99e8\n\n3ee0752c7749a033301c39c2ae805ab6aaf5808c",
 "team_credit": "AOKP",
-"subject": "WeatherPanel: Add options to hide weather panel",
-"author_date": "Sun Oct 28 15:16:32 2012 -0400",
-"author_name": "Stevespear426",
+"subject": "Suppress String resources build warnings",
+"author_date": "Sun Nov 4 23:30:52 2012 -0500",
+"author_name": "JBirdVegas",
 "path": "frameworks_base",
-"committer_date": "Mon Oct 29 09:42:18 2012 -0400",
-"commit_hash": "\n3ee0752c7749a033301c39c2ae805ab6aaf5808c",
-"parent_hashes": "c069ebf697f4bbc3d80965c136a7ee84cd79b0f7",
-"committer_name": "Stevespear426"
+"committer_date": "Mon Nov 5 01:10:42 2012 -0500",
+"commit_hash": "\nedb2017213759d3734c7eab8cec0a003eef1c388",
+"parent_hashes": "096d4d94b27de4d9ef9e5f3aebb09b9fdb4c38b0",
+"committer_name": "JBirdVegas"
 },
 {
-"body": "Revert \"dd: support skip and seek values greater than 2G on android\"\n\nThis reverts commit 6a025ba7107abe0c46a29c023ea54262c0dda26a, breaks\ndealing with large storages, and it's making simple operations like\n\"/dd if=/dev/zero of=/dev/block/mmcblk0p3 seek=6144 count=75 bs=1\"\nfail in recovery\n\nChange-Id: I246072ea7e614ee19fc421a8b11f9d11504c9f45\n\n",
+"body": "android ndk defconfig: fix default location of modules\n\nThe default location of modules is currently /lib/modules which\nwe never use on android.  Some kernel modules need to be loaded on\nboot with /system/bin or init.d scripts.\n\n8ea3bb94d7ae891807f8dec0ace9e894e4217f4b",
 "team_credit": "CyanogenMod",
-"subject": "Revert \"dd: support skip and seek values greater than 2G on android\"",
-"author_date": "Thu Oct 25 21:28:26 2012 +0100",
-"author_name": "Ricardo Cerqueira",
+"subject": "android ndk defconfig: fix default location of modules",
+"author_date": "Tue Oct 30 13:38:06 2012 -0600",
+"author_name": "Paul Beeler",
 "path": "android_external_busybox",
-"committer_date": "Thu Oct 25 22:01:10 2012 +0100",
-"commit_hash": "\n8ea3bb94d7ae891807f8dec0ace9e894e4217f4b",
-"parent_hashes": "5850222b1b8afb810177d8440ca5ed58f3f793fe",
-"committer_name": "Ricardo Cerqueira"
+"committer_date": "Tue Oct 30 14:15:11 2012 -0600",
+"commit_hash": "\n48daa652ba2875084e449302af9f9d0ae1811785",
+"parent_hashes": "8ea3bb94d7ae891807f8dec0ace9e894e4217f4b",
+"committer_name": "Paul Beeler"
 }
 ]
