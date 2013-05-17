@@ -948,16 +948,16 @@
 "committer_name": "Jubakuba"
 },
 {
-"body": "Updated czech translation\n\nChange-Id: I55a50173b55404947e68fab20f4d0c2611a9e666\nSigned-off-by: kecinzer <kecinzer@gmail.com>\n\nefc88eb6e4d9331af57c41e469dc25ec766e32b6",
+"body": "mGerrit: clean up unused code\n\nbump version to 2.0\nturn off all debugging\n\nChange-Id: I6b7e6658bb8b6d046dc988766272bd238508be75\n\n9085cec26f771dc7a9b988d4c79dede4e9deecb9",
 "team_credit": "AOKP",
-"subject": "Updated czech translation",
-"author_date": "Thu May 16 09:53:38 2013 +0200",
-"author_name": "kecinzer",
+"subject": "mGerrit: clean up unused code",
+"author_date": "Thu May 16 17:48:19 2013 -0400",
+"author_name": "JBirdVegas",
 "path": "external_jbirdvegas_mGerrit",
-"committer_date": "Thu May 16 09:53:38 2013 +0200",
-"commit_hash": "\nfd4ab3bfe9b4bec853aa6db15cfec5cddb5ff3ec",
-"parent_hashes": "c7972b101de8903e32c6a6f174aa544bd6fd6d36",
-"committer_name": "kecinzer"
+"committer_date": "Thu May 16 17:48:19 2013 -0400",
+"commit_hash": "\na929586da38d2db17c587f76fe5a1337c2198b13",
+"parent_hashes": "9085cec26f771dc7a9b988d4c79dede4e9deecb9",
+"committer_name": "JBirdVegas"
 },
 {
 "body": "update ant building\n\nandroid update project -p . -t 6 -s\n\nb75d501ec8c390da4c68f8d4f09199dd75cde738",
