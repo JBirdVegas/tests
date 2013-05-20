@@ -1,7 +1,7 @@
 [
 {
 "body": "Squash Dark UI commits from Slim\n\nFrameworks native: Add new configuration qualifier for UI change on the fly (2/3)\n\nlast night I got an idea after 5 weeks of breaking stuff and\ndoing to much complicated things. Together with mnazim we tried\ntoday to realize this idea. So another absolut new unique SlimBean\nfeature is born.\n\nThe aim we wanted at the end was to give a simple and resource friendly\nway to change the complete UI of a rom on the fly. So why not use\nthe great fallback mechanism of AOSP and change/add a new\nqualifier into the AOSP core. To explain how it works.....if you want\nto add a new UI just add in /res folder of any app or framework you want\nfolders with the qualifier \"inverted\". Eg. drawable-inverted-xhdpi\nor values-inverted or layout-port-inverted or whatever you want. Put in\nonly the files you want to modify thats it.\n\nAll qualifier in AOSP are following strict rules. You can read here.\nDo not forget the order of qualifier is important. The new \"inverted\"\nqualifier we added to the UIMode qualifier. To get more information\nabout read here\n\nhttp://developer.android.com/guide/topics/resources/providing-resources.html\n\nSo what this commit does:\n- add new qualifier \"inverted\"\n- support for API level 13 and higher\n- change the custom UI on the fly\n- control default UI Mode over config.xml\n- working for all apps. They just need to include folders\nwith the new qualifier name\n- resource friendly....no resource wasting either programmticaly\nthen source blow, because you just need to put in the files you\nwant to change\n- cause of the qualifier structure compatible with every phone,\nlanguage or whatever qualifier you want to use on top\n- 100% compatible to theme manager. If a theme misses drawables\nthey are replaced with them from the current UIMode which is set.\n\nWhat is the benefit why not use just a theme? We started half year\nago TRDS which was inverted gapps system base themed....means we\nmorphed directly the changes into the framework. This methoed was\non of the reasons why trds got so popular. Points for that are easy\nfirst the system is themed, means each theme you activate over\ntheme engine works on top the themed system. So you have a base\nstyle and can modify more if you want. The other reason is easy\na lot faster and resource friendly. Now this idea went to the\nrom to provide two core system based themes and user\ncan do on top what they want or not without, like you have\nto roms in one.\n\nThis commit just adds the support for this\n\ncheers\n\nmnazim and kufikugel\n\nChange-Id: I8d6637f81f3a3263ebc43f67e824cfda910df9db\n\nFrameworks_native: TRDS new qualifier push up qualifier number (2/2)\n\nHey guys,\n\nafter this feature is working really well and a lot roms kanged\nit we got a hint to change one thing which is indeed a good\nidea to have less problems on AOSP updates and tools like\nApktool can provide us better without doing major changes every\nAOSP update.\n\nWe pushed the number up to 69.....should be enough for\nnext years.\n\nPlease note for the one who are using our gapps at the moment\nthis will break actuall gapps till we published the new one\nwhich will be end this week as usual.\n\nAfter that we will begin to publish the apktool after we had\nnow enough tests....and who knows maybe the \"official\" Apktool\nwill provide us all now. So all in all a good time to change\nthe qualifier now before it is getting more and more\npopular (we saw that first themes are providing us)\n\ncheers\n\nLars\n\nChange-Id: I8253a8a2302032aac8f4b2ea3ca835a1ecf231a5\n\n8f82c1fb54ff57b36a3d5cc59c05ec21614bc3b6",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Squash Dark UI commits from Slim",
 "author_date": "Sat Mar 9 22:28:30 2013 +0100",
 "author_name": "Lars Greiss",
@@ -13,7 +13,7 @@
 },
 {
 "body": "HTCQualcommRIL: re-add force LTE modes\n\nChange-Id: Ib1a53e0c34631ae187088a0f0161e3954ac36a80\n\nf93cdeae46fb8415b9f77de5f5f9e62394a203a6",
-"team_credit": "CyanogenMod",
+"team_credit": "No Project Associated",
 "subject": "HTCQualcommRIL: re-add force LTE modes",
 "author_date": "Thu May 16 23:34:13 2013 -0700",
 "author_name": "Ethan Chen",
@@ -25,7 +25,7 @@
 },
 {
 "body": "Updated simplified Chinese translations\n\nChange-Id: Ia3cf8dfc55ce1a69a1b04de05fa43fa5fa061a8e\n\n91810017ca52bebef868f4383825f5e90c4397a8",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Updated simplified Chinese translations",
 "author_date": "Sun May 19 14:36:09 2013 +0800",
 "author_name": "YULIANGMAX",
@@ -37,7 +37,7 @@
 },
 {
 "body": "camera: fixup htc params\n\nChange-Id: Iee0086e8a7319ada09f5191092c314c099e0d66a\n\n78e52a8f02afcbe68923430e769ad83e4be543c4",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "camera: fixup htc params",
 "author_date": "Sun May 5 15:56:08 2013 +0200",
 "author_name": "Daniel Hillenbrand",
@@ -49,7 +49,7 @@
 },
 {
 "body": "Avoid NullPointerException\n\nA crash will occur when a user share more\nthan one file and the mime type of any of\nthe files to share is null.\n\nAvoid crash by not adding the mime type to\nthe mime type list if the value is null.\n\nChange-Id: Ia06f3389da6ce34e11ffcf349a10fdbe64cfc9bd\n\n",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Avoid NullPointerException",
 "author_date": "Thu Jan 3 12:49:09 2013 +0100",
 "author_name": "Mattias Falk",
@@ -61,7 +61,7 @@
 },
 {
 "body": "Calculator:Dark UI changes\n\nCalculator: TRDS goes Slim\n\nadd trds changed files to provide new UI mode engine\n\nThis commit fixes also a missing color value link issue from\nAOSP\n\ncheers\n\nChange-Id: I18cdb88941ae212cfa82c59bd3124dc04efc6c20\n\nConflicts:\nres/values/styles.xml\n\n52f9ab2a3430d5bcdb6cb2378b0d637daa73549c",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Calculator:Dark UI changes",
 "author_date": "Sun Mar 10 21:20:26 2013 +0100",
 "author_name": "Lars Greiss",
@@ -73,7 +73,7 @@
 },
 {
 "body": "[Browser] Enable audio permissions in manifest for WebAudio\n\nChange-Id: Ib0c5caf34c71026cfde5b3c3ab1b4485a0ad7b06\n\naf721e84e38960efdb5dceaabc5444d3bf9f2a38",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "[Browser] Enable audio permissions in manifest for WebAudio",
 "author_date": "Mon Jan 14 17:12:44 2013 -0800",
 "author_name": "Karthikeyan Periasamy",
@@ -85,7 +85,7 @@
 },
 {
 "body": "Updated simplified Chinese translations\n\nChange-Id: Ifb66dd541a810db3e7b1c35520d9ab6e03f4ca57\n\n4873e00ea4ba6e3373d4e62995904696e238d67f",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Updated simplified Chinese translations",
 "author_date": "Sun May 19 14:03:14 2013 +0800",
 "author_name": "YULIANGMAX",
@@ -97,7 +97,7 @@
 },
 {
 "body": "Email: Dark UI changes\n\nEmail: Slim goes TRDS\n\ncheers\n\nChange-Id: I30b95842c7ac229bbe3c16676c660e772ffbae28\n\n",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Email: Dark UI changes",
 "author_date": "Wed Mar 20 19:46:11 2013 +0100",
 "author_name": "Lars Greiss",
@@ -109,7 +109,7 @@
 },
 {
 "body": "Holo-fy the icons\n\nChange-Id: I8f6c12de0cea8c2f7b97990019c10028eb565e7f\nSigned-off-by: ChampionSwimmer <android@championswimmer.tk>\n\nf23cda5503185f098ac0e0bd876ef75b41ad6bf8",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Holo-fy the icons",
 "author_date": "Wed May 15 13:06:49 2013 +0530",
 "author_name": "ChampionSwimmer",
@@ -121,7 +121,7 @@
 },
 {
 "body": "Contacts: Dark UI\n\nRemove ugly dialer texture in Dark UI\n\n3cb182f170f748cc9ec1b2a1fe4d723285805b96",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Contacts: Dark UI",
 "author_date": "Thu Mar 14 01:31:51 2013 -0400",
 "author_name": "Bajee11",
@@ -133,7 +133,7 @@
 },
 {
 "body": "Gallery2: Updated czech translation\n\nChange-Id: I78d6293259828033f87fade5f7ba4b5b2a9d6082\nSigned-off-by: kecinzer <kecinzer@gmail.com>\n\ndc5b2f79722ee7c5d0aa82cf14d124ce95068a27",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Gallery2: Updated czech translation",
 "author_date": "Sun May 12 13:46:29 2013 +0200",
 "author_name": "kecinzer",
@@ -145,7 +145,7 @@
 },
 {
 "body": "Hungarian Translations\n\nPS2: Removed temp file.\nPS3: Whitespace\n\nSigned-off-by: klasszsrac <klasszsrac@gmail.com>\n\nChange-Id: Ic2744b3dc67a7f9da7b2a568a5a9dcefd5aac6d0\n\n77c660a6816c79ee912c86670144a2968269fe14",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Hungarian Translations",
 "author_date": "Wed May 8 00:35:35 2013 +0200",
 "author_name": "klasszsrac",
@@ -157,7 +157,7 @@
 },
 {
 "body": "aokpclock: clock hands based on unicorn horns!! and 2 new dials\n\nPS2 : update preview\nPS3 : sharpened hour and minute hand images (sourced from\noriginal AI files now)\nNOTE: I am being lazy, and not updating the hands\nin the preview. (they are still the old ones)\nI guess that won't make a difference, as\nthe blurriness is not visible in preview at least\n\nChange-Id: I354d7b28ca1d4429511808510e84ae4e4044c02e\nSigned-off-by: ChampionSwimmer <android@championswimmer.tk>\n\n",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "aokpclock: clock hands based on unicorn horns!! and 2 new dials",
 "author_date": "Wed Apr 3 22:39:47 2013 +0530",
 "author_name": "ChampionSwimmer",
@@ -169,7 +169,7 @@
 },
 {
 "body": "Updatech czech translation\n\nPS2: Whitespace\n\nChange-Id: If27a1a0d3fb45cb4baf39e486aa725423011e2a2\nSigned-off-by: kecinzer <kecinzer@gmail.com>\n\nd91a3d80b074f9781026f4f169a99d010604d84e",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Updatech czech translation",
 "author_date": "Thu May 16 20:48:00 2013 +0200",
 "author_name": "kecinzer",
@@ -181,7 +181,7 @@
 },
 {
 "body": "FmRadio: NB translation\n\nPS2: Merge it!\n\nChange-Id: Icfdbd0bdc5c952899728ddb40f4b5375a8f7ed95\n\n7b7067b67bab82e2603576ca162633d983ea7ef5",
-"team_credit": "CyanogenMod",
+"team_credit": "No Project Associated",
 "subject": "FmRadio: NB translation",
 "author_date": "Tue May 7 17:25:40 2013 +0200",
 "author_name": "Odin Ugedal",
@@ -193,7 +193,7 @@
 },
 {
 "body": "Updated simplified Chinese translations\n\nChange-Id: Ib8c18c294da1d3f2a9b30f0da1e8a2d39d44a4d1\n\nda0712a580cf9dd7b41d438fd6ae4823308af2de",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Updated simplified Chinese translations",
 "author_date": "Sun May 19 14:23:41 2013 +0800",
 "author_name": "YULIANGMAX",
@@ -205,7 +205,7 @@
 },
 {
 "body": "Camera: Update exposure drawables to fix various problems\n\nUpdates exposure drawables to new ones more similar to the\noriginal AOSP drawables. Also makes them visible on light\nbackgrounds.\n\nThey were previously changed in change 28836.\n\nChange-Id: I1c628980e809e48646c7a6a68a546255e2a09b80\n\n1d02dbce3a5eaa8dd8d63aa3c7e3d82ad371eb32",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Camera: Update exposure drawables to fix various problems",
 "author_date": "Tue May 14 03:21:22 2013 +0200",
 "author_name": "blunden",
@@ -217,7 +217,7 @@
 },
 {
 "body": "add getprop\n\nChange-Id: Id7a87626d2351d49750e9982d6f81d2646d9d36d\n\nabc56ea91d926d80e15146e561f4414d207d22ee",
-"team_credit": "CyanogenMod",
+"team_credit": "No Project Associated",
 "subject": "add getprop",
 "author_date": "Mon May 13 16:47:14 2013 -0700",
 "author_name": "Koushik Dutta",
@@ -241,7 +241,7 @@
 },
 {
 "body": "exynos4: hal: include: Exif.h: always keep two decimal places in macros\n\nThe APEX macros always rounded to int, losing too much precision. Ensure\nthat we always keep at least two decimal digits.\n\nThe more precise F-number comes from the value recorded by the camera\nclosed source driver.\n\nAdded a new macro APEX_SHUTTER_TO_EXPOSURE(x) (credit to tryptophane).\n\nChange-Id: Ief43c15c6517d8dc48d4d4bc9e93df9eb01e6b91\n\n2b8a73fc5c090e5d1c418f902fd27d0398ef7921",
-"team_credit": "CyanogenMod",
+"team_credit": "No Project Associated",
 "subject": "exynos4: hal: include: Exif.h: always keep two decimal places in macros",
 "author_date": "Fri May 10 14:19:23 2013 +0200",
 "author_name": "ghepeu",
@@ -265,7 +265,7 @@
 },
 {
 "body": "Revert \"liboverlay : unset basepipe on overlay intialization.\"\n\nThis reverts commit 6b837723604058938da48a20a07583203113a50e.\n\nb24b13b75d819404c32d6bd3185983491345a03e",
-"team_credit": "CyanogenMod",
+"team_credit": "No Project Associated",
 "subject": "Revert \"liboverlay : unset basepipe on overlay intialization.\"",
 "author_date": "Sat May 18 09:48:06 2013 +0200",
 "author_name": "Giulio Cervera",
@@ -277,7 +277,7 @@
 },
 {
 "body": "GPS: Fixes a problem stopping the engine while an AGPS data is active\n\nSometimes the engine does not send the GPS_STATUS_ENGINE_OFF\nmessage, so we end up blinking the GPS icon forever.  Deferring\nthe loc_eng_stop call until the AGPS activity is done works around\nthis problem.\n\nChange-Id: I54a911b028cc685b282661837f1317119713d64a\n\n48717e95502605574918272ef8782456d82ab027",
-"team_credit": "CyanogenMod",
+"team_credit": "No Project Associated",
 "subject": "GPS: Fixes a problem stopping the engine while an AGPS data is active",
 "author_date": "Thu Jan 27 17:45:41 2011 -0800",
 "author_name": "Stephen Li",
@@ -289,7 +289,7 @@
 },
 {
 "body": "audio/msm7x30: fix for SEMC devices with stereo hw speaker\n\nSigned-off-by: Michael Bestas <mikeioannina@gmail.com>\n\nChange-Id: I2a326b13101bfe589eebe46012559633d8b361df\n\n0c85f77350e1c1484d6aa0be46a37dcf442fac66",
-"team_credit": "CyanogenMod",
+"team_credit": "No Project Associated",
 "subject": "audio/msm7x30: fix for SEMC devices with stereo hw speaker",
 "author_date": "Wed May 30 09:30:10 2012 +0300",
 "author_name": "freexperia",
@@ -313,7 +313,7 @@
 },
 {
 "body": "sensors: set the correct vendor name\n\nChange-Id: If400d54097dc0adb3d70f6371b8c7176d7082498\nSigned-off-by: Chirayu Desai <cdesai@cyanogenmod.org>\n\n11ab2915935c7b08891f12c6591a2b7887e60748",
-"team_credit": "CyanogenMod",
+"team_credit": "No Project Associated",
 "subject": "sensors: set the correct vendor name",
 "author_date": "Mon May 13 08:46:51 2013 +0530",
 "author_name": "Chirayu Desai",
@@ -325,7 +325,7 @@
 },
 {
 "body": "AriesParts: Initial Japanese translation\n\nChange-Id: I1979d8746b802e1e4a9fcc810278e25fd8c8c86b\n\n",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "AriesParts: Initial Japanese translation",
 "author_date": "Thu May 2 00:58:42 2013 +0900",
 "author_name": "rdgate",
@@ -337,7 +337,7 @@
 },
 {
 "body": "galaxys2-common: camera: exynos_exif.c: fix values of some wrong EXIF tags\n\n* adapt the code to the changes made in Exif.h\n* calculate ExposureTime from the ShutterSpeedValue: the exposure time\nread from the camera doesn't seem to work\n\nTogether with changes in Exif.h, this commit fixes ExposureTime, FNumber,\nShutterSpeedValue, ApertureValue, BrightnessValue and MaxApertureValue.\n\nThe values now match what was generated by the closed camera driver.\n\nCredits to tryptophane for ExposureTime and ShutterSpeedValue. Thanks to\nopaco23 and stone_ship who provided samples.\n\nThis commit requires http://review.cyanogenmod.org/37370\n\nChange-Id: I16b606e65e895b98f9679ffb6172869c2cbe741c\n\n8cde65629e3dbfb2f528c55730df47b096834c4d",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "galaxys2-common: camera: exynos_exif.c: fix values of some wrong EXIF tags",
 "author_date": "Fri May 10 14:33:08 2013 +0200",
 "author_name": "ghepeu",
@@ -349,7 +349,7 @@
 },
 {
 "body": "overlay: camera: temporarily disable zsl mode to fix front camera\n\nWith the ZSL mode enabled, the front camera preview\nis not restarted when a picture is taken, due to which\nthe preview is stuck and requires restarting the\ncamera. Temporarily disable ZSL until a proper fix is in place.\n\nChange-Id: Idb4c1cda352493c155fcd9db93aed3c5abd91958\n\na6644f80f0162ba2cecf48706986764f064de19c",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "overlay: camera: temporarily disable zsl mode to fix front camera",
 "author_date": "Wed May 1 17:17:02 2013 +0530",
 "author_name": "Dheeraj CVR",
@@ -361,7 +361,7 @@
 },
 {
 "body": "celox-common: UMS is deprecated\n\n* UMS is buggy and deprecated. Disable it.\n\nChange-Id: Ic9fd560088214ace094023c4bf4468f95d5f7ce7\n\n4cf9b19c7ed18e016b648c41914c33d1cd83df7a",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "celox-common: UMS is deprecated",
 "author_date": "Mon May 6 22:47:32 2013 -0700",
 "author_name": "Steve Kondik",
@@ -373,7 +373,7 @@
 },
 {
 "body": "Settings: Initial Japanese translation\n\nChange-Id: I543cb585323aa3b18c167f5cb06748d7fb822d18\nSigned-off-by: rdgate <rdgate@gmail.com>\n\nef7badd0a83602b99e498949af37afd7ecc1cd40",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Settings: Initial Japanese translation",
 "author_date": "Thu May 2 00:11:48 2013 +0900",
 "author_name": "rdgate",
@@ -385,7 +385,7 @@
 },
 {
 "body": "t0ltetmo: add default apn\n\nChange-Id: Ifa6c15cfe81f9f5365641c94752a7e1374428f60\nSigned-off-by: Jonathan Steadman <xxwhitehawk@gmail.com>\n\n193e9ae4cf0c0e4416c434448808e1e379d436ea",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "t0ltetmo: add default apn",
 "author_date": "Fri May 10 09:17:48 2013 -0700",
 "author_name": "Jonathan Steadman",
@@ -397,7 +397,7 @@
 },
 {
 "body": "hercules: Update BCM4330 firmware for BT\n\nChange-Id: Ia67fdf227cf8123528db0f0703d25280e3cf8605\n\na5a0b6f737c813278ec2a0e25b458b8fb81aa82d",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "hercules: Update BCM4330 firmware for BT",
 "author_date": "Fri May 10 12:38:15 2013 -0700",
 "author_name": "Mike Grissom",
@@ -409,7 +409,7 @@
 },
 {
 "body": "Revert: Temp GPS fix.\n\nChange-Id: Icf3b436e4a21bdac39fec9b767a2a22c3c073b8f\nSigned-off-by: Stevespear426 <stephen.k.spear@gmail.com>\n\n",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Revert: Temp GPS fix.",
 "author_date": "Thu Apr 18 18:28:05 2013 +0200",
 "author_name": "Stevespear426",
@@ -421,7 +421,7 @@
 },
 {
 "body": "d2usc: Revert to CM kernel\n\nChange-Id: Ia3e69bf336148a3b2cd4cbc41f1d8652e4ddf00c\nSigned-off-by: bmc08gt <bmc08gt.teamb00sted@gmail.com>\n\n813dccadb1c2e29a2560282cc8b58c877ea3a484",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "d2usc: Revert to CM kernel",
 "author_date": "Fri May 10 14:55:43 2013 +0200",
 "author_name": "bmc08gt",
@@ -457,7 +457,7 @@
 },
 {
 "body": "qcom-common: Use ondemand governor in recovery\n\nChange-Id: Ied47fc80d5d8aa4d5c15a11ab7a9e55dae1ecde2\n\n9359fafde74672de030e25fe70e744fc1b2e0b1f",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "qcom-common: Use ondemand governor in recovery",
 "author_date": "Thu May 9 19:33:25 2013 -0700",
 "author_name": "Steve Kondik",
@@ -469,7 +469,7 @@
 },
 {
 "body": "Revert: Temp GPS fix.\n\nChange-Id: Iddc1d5dac292127c099e2e2238baca4785ce8dfc\nSigned-off-by: Stevespear426 <stephen.k.spear@gmail.com>\n\n",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Revert: Temp GPS fix.",
 "author_date": "Thu Apr 18 18:28:47 2013 +0200",
 "author_name": "Stevespear426",
@@ -481,7 +481,7 @@
 },
 {
 "body": "Remove vendorsetup.sh\n\nChange-Id: I6545cc78749a50446289ba6c773faeac385440ff\nSigned-off-by: KhasMek <Boushh@gmail.com>\n\n",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Remove vendorsetup.sh",
 "author_date": "Wed Apr 17 07:58:15 2013 +0200",
 "author_name": "KhasMek",
@@ -493,7 +493,7 @@
 },
 {
 "body": "DeviceSettings: Update Japanese translation\n\nChange-Id: I6474ff887fc020b42d62f34af4bfc49ece1fdbc8\nSigned-off-by: rdgate <rdgate@gmail.com>\n\n4513793a02bc0e02bd3115a230e1536ec3155dc1",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "DeviceSettings: Update Japanese translation",
 "author_date": "Wed May 8 11:00:45 2013 +0900",
 "author_name": "rdgate",
@@ -505,7 +505,7 @@
 },
 {
 "body": "i9100g : Fr translation\n\nPatch set 2 : remove \">>\"\nPatch set 3 : dummy patch for CID\nPatch set 4 : correction\n\nChange-Id: I845395b270ebaa36d327a1ad70ae1be9532bea9c\n\nb28b78d345fe2ea72c8f67dbb37c7e5de0fba953",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "i9100g : Fr translation",
 "author_date": "Mon Apr 15 22:44:25 2013 +0200",
 "author_name": "DelPETER",
@@ -517,7 +517,7 @@
 },
 {
 "body": "msm8960: Relocate media profiles\n\n* Due to hardware bugs / features / etc, we need to seperate this for\nJF, as D2 can't record 1080p on the front camera.\n\nChange-Id: I98f82961e882c17c992545592962ff79df18fdaf\n\n993015a6efa21a7d3d7c1c6037432813a48dd83e",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "msm8960: Relocate media profiles",
 "author_date": "Sat May 4 22:03:42 2013 -0700",
 "author_name": "Steve Kondik",
@@ -541,7 +541,7 @@
 },
 {
 "body": "gps: Update to CAF jb_2.3.2, reenable privacy lock.\n\nSquashed commit of:\n\ncommit 1fc7e568880473fa15fdac4d7a3b4a9557e2781e\nAuthor: Mike Kasick <mike@kasick.org>\nDate:   Tue Jan 1 21:47:51 2013 -0500\n\ngps: Add loc_eng_set_privacy function to enable/disable GPS privacy lock.\n\nPrivacy lock is enabled on loc_eng_init, disabled on loc_eng_cleanup,\nmimicking the behavior of TW.\n\nThe privacy lock state is non-volatile, and control of the lock is needed\nto ensure that the GPS works and is responsive to requests.  Otherwise the\nGPS may silently cease to work depending on its last state in TW.\n\ncommit fe69d4eb5e2cf3ef003def7fa134549ffdadcb53\nAuthor: Mike Kasick <mike@kasick.org>\nDate:   Sat May 4 20:44:54 2013 -0400\n\ngps: Update to CAF jb_2.3.2 (a731b5ab6b3acba561abfcbf1742fb1519607bc3).\n\nConflicts:\ngps/libloc_api_50001/Android.mk\ngps/libloc_api_50001/LocApiAdapter.cpp\ngps/utils/Android.mk\ninclude/hardware/gps.h\n\nChange-Id: Ia04c76d91963ce4932fb9b74f9425d87705cb861\n\nc696e0c4831934a240963a17f4202ad5899dcc46",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "gps: Update to CAF jb_2.3.2, reenable privacy lock.",
 "author_date": "Sat May 4 20:44:54 2013 -0400",
 "author_name": "Mike Kasick",
@@ -553,7 +553,7 @@
 },
 {
 "body": "DeviceSettings: Update Japanese translation\n\nChange-Id: I0993e1e21d45c5efea260ebcc0ac7a3b6649cb1c\nSigned-off-by: rdgate <rdgate@gmail.com>\n\nf8a5e119ccbd9670912e7b1d995c5966c4684338",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "DeviceSettings: Update Japanese translation",
 "author_date": "Thu May 2 00:29:19 2013 +0900",
 "author_name": "rdgate",
@@ -565,7 +565,7 @@
 },
 {
 "body": "d2tmo: Revert to CM kernel\n\nChange-Id: Iee04c2b18619f722154658ce3dab3d703d836d4f\nSigned-off-by: bmc08gt <bmc08gt.teamb00sted@gmail.com>\n\nad8a5941920e41bdc3f3b831b004a9738f1c71c0",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "d2tmo: Revert to CM kernel",
 "author_date": "Fri May 10 14:54:49 2013 +0200",
 "author_name": "bmc08gt",
@@ -577,7 +577,7 @@
 },
 {
 "body": "d2vzw: Revert back to CM kernel\n\nChange-Id: I216c73f605c78c5d06de2bc5568a0ea240e12a3b\nSigned-off-by: bmc08gt <bmc08gt.teamb00sted@gmail.com>\n\n435c3010ed913ffcf0a5823a625e7b4ea0877a63",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "d2vzw: Revert back to CM kernel",
 "author_date": "Fri May 10 14:52:12 2013 +0200",
 "author_name": "bmc08gt",
@@ -589,7 +589,7 @@
 },
 {
 "body": "msm8660: Fix writing of bytes to param partition\n\nChange-Id: I1184ac06630ec7f6ee651ad3906ae902144f062e\n\nfaa5d330d25081bcfab76ec4d524d3c9c78de5b3",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "msm8660: Fix writing of bytes to param partition",
 "author_date": "Thu May 9 22:45:26 2013 -0700",
 "author_name": "Steve Kondik",
@@ -601,7 +601,7 @@
 },
 {
 "body": "d2att: Revert to CM kernel\n\nChange-Id: I90da9200f771c67bd52544c1165a451728a8585f\nSigned-off-by: bmc08gt <bmc08gt.teamb00sted@gmail.com>\n\n627903c06cfa05fff635488984f52522dc05fb47",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "d2att: Revert to CM kernel",
 "author_date": "Fri May 10 14:53:52 2013 +0200",
 "author_name": "bmc08gt",
@@ -613,7 +613,7 @@
 },
 {
 "body": "Remove vendorsetup.sh\n\nChange-Id: I972689e30d00955913bed1b6d13704cc27439494\nSigned-off-by: KhasMek <Boushh@gmail.com>\n\n",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Remove vendorsetup.sh",
 "author_date": "Wed Apr 17 07:54:42 2013 +0200",
 "author_name": "KhasMek",
@@ -625,7 +625,7 @@
 },
 {
 "body": "Remove vendorsetup.sh\n\nChange-Id: Iecfa5448495723addfee45fe4e15bcc7b8422ab9\nSigned-off-by: KhasMek <Boushh@gmail.com>\n\n",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Remove vendorsetup.sh",
 "author_date": "Wed Apr 17 07:53:34 2013 +0200",
 "author_name": "KhasMek",
@@ -637,7 +637,7 @@
 },
 {
 "body": "Add Hardware Info\n\nChange-Id: I3aaaa792a4016939060a55c46232242bdba85d5d\n\n5b5b01d4952091a4617e236bea6d5035b0d605de",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Add Hardware Info",
 "author_date": "Thu May 2 05:52:20 2013 -0500",
 "author_name": "dhacker29",
@@ -649,7 +649,7 @@
 },
 {
 "body": "Install persistence support\n\nChange-Id: Iee36bb56ebb2967bb1fd04765af738c09da9bdbe\n\n98204fa3e390599267fce16e931309408a3ad78e",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Install persistence support",
 "author_date": "Thu May 2 06:10:56 2013 -0500",
 "author_name": "dhacker29",
@@ -661,7 +661,7 @@
 },
 {
 "body": "OMAP4Parts: NL translations\n\nChange-Id: I3ce67e5c6e6f2c051f8e7134828ca5e9d61d0b3e\n\n31d51bce7f03cedb4a3ffdff5f3e8edfd7028e2f",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "OMAP4Parts: NL translations",
 "author_date": "Sun May 5 14:40:58 2013 +0200",
 "author_name": "Marco Brohet",
@@ -673,7 +673,7 @@
 },
 {
 "body": "Add Hardware Info\n\nChange-Id: I9a3a25713bbbff85492bede73d0aed37213e31a9\n\n2cfa205ceb448c2ca2525c538b07004bb23e8c2f",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Add Hardware Info",
 "author_date": "Thu May 2 05:52:46 2013 -0500",
 "author_name": "dhacker29",
@@ -685,7 +685,7 @@
 },
 {
 "body": "Add Hardware Info\n\nChange-Id: I1dbab7309f7a181e7c80ad9896e8311115939414\n\n3aabf628998d729189c6c1bfc259d77edc9613ab",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Add Hardware Info",
 "author_date": "Thu May 2 05:51:20 2013 -0500",
 "author_name": "dhacker29",
@@ -697,7 +697,7 @@
 },
 {
 "body": "Add Hardware Info\n\nChange-Id: Ic1eb5b42debd8d72c075e496df0dc444ff7c4314\n\nd5a4c19f88c2daa0daa3609f2be5f712b7725ee9",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Add Hardware Info",
 "author_date": "Thu May 2 05:51:52 2013 -0500",
 "author_name": "dhacker29",
@@ -709,7 +709,7 @@
 },
 {
 "body": "Trigger qcom-post-boot from dev.bootcomplete\n\nOccasionally init.svc.bootanim hangs in the \"stopping\" state, which means\nqcom-post-boot never starts.  Since qcom-post-boot is a critical service,\ntrigger it from dev.bootcomplete instead.\n\nChange-Id: Id06e66999da35fde51ae5d95c721c18487c11a9e\n\n",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Trigger qcom-post-boot from dev.bootcomplete",
 "author_date": "Tue May 7 20:53:27 2013 +0000",
 "author_name": "Tom Marshall",
@@ -721,7 +721,7 @@
 },
 {
 "body": "mako: remove caf display flag\n\n*this is no longer needed\n\nChange-Id: Ie5cbfc3c9a9ff946166b1116303fe014805eabf6\nSigned-off-by: Jonathan Steadman <xxwhitehawk@gmail.com>\n\n2811025fee50403a7f32981bedc2adcfe9889d9d",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "mako: remove caf display flag",
 "author_date": "Wed Apr 24 15:47:51 2013 -0700",
 "author_name": "Jonathan Steadman",
@@ -733,7 +733,7 @@
 },
 {
 "body": "evita: Cleanup unused files\n\n1) AudioBTID.csv: only used by msm8660 qcom audio-caf, not msm8960\n2) Keylayouts: removed those provided by AOSP in frameworks/base/data/keyboards\n\nChange-Id: Ic77ebcde6931e2abc9a5861d9fe1e859bcc2bc39\nSigned-off-by: Rohan Mathur <rohanmathur34@gmail.com>\n\n7ac3d9f238d78c5e9bc31f9445f180b10a99bdea",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "evita: Cleanup unused files",
 "author_date": "Thu May 9 21:17:43 2013 -0400",
 "author_name": "Rohan Mathur",
@@ -745,7 +745,7 @@
 },
 {
 "body": "s4-common: ril: skip initial radio off\n\nHTC 8960 RIL starts by powering off, avoid sending the power off message\nagain to allow radio to power up properly.\n\nChange-Id: I0ba5078e3518a59a77462fb887a6173b94ab5b5c\n\nc347465f0cf772946b524aba07fa5213992f0403",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "s4-common: ril: skip initial radio off",
 "author_date": "Thu May 16 16:18:38 2013 -0700",
 "author_name": "Ethan Chen",
@@ -757,7 +757,7 @@
 },
 {
 "body": "msm8960-common: ril: use custom HTC RIL class\n\nUse modified HTC RIL class across all devices.\n\nChange-Id: I07b4f3a18ee2acca4c3ce5af2220a4f44fd56dc3\n\n0b9ccf1ebc06ef115b1313f9bb147e941ac26fb1",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "msm8960-common: ril: use custom HTC RIL class",
 "author_date": "Thu May 16 16:13:13 2013 -0700",
 "author_name": "Ethan Chen",
@@ -769,7 +769,7 @@
 },
 {
 "body": "add Torch sysfs overlay\n\nChange-Id: I998d3e77b5856994550f941f94c3ad0a00f0c4e2\nSigned-off-by: ChampionSwimmer <android@championswimmer.tk>\n\ndf60d230959661511a6ec0b02ae1a79704705ebd",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "add Torch sysfs overlay",
 "author_date": "Sun May 19 11:03:23 2013 +0530",
 "author_name": "ChampionSwimmer",
@@ -781,7 +781,7 @@
 },
 {
 "body": "hayabusa: update prop scripts\n\nChange-Id: Ieaa8b4291c802622cf11d5e2c39181246cb04d0e\n\nee5f8b30a018fa1ef5d08ce5a11840494fdb545c",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "hayabusa: update prop scripts",
 "author_date": "Sat May 18 15:49:41 2013 +0200",
 "author_name": "Giulio Cervera",
@@ -793,7 +793,7 @@
 },
 {
 "body": "odin: update prop scripts\n\nChange-Id: Idd4f353ece8d5f3f58e557de5e870a9793217824\n\n7d1fc2f1215de787b48c8b6a8fe2eb84d984c733",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "odin: update prop scripts",
 "author_date": "Sat May 18 15:48:03 2013 +0200",
 "author_name": "Giulio Cervera",
@@ -805,7 +805,7 @@
 },
 {
 "body": "yuga: update prop scripts\n\nChange-Id: Ic4fd444b394236a47b41add6a549edc4b52bda2e\n\n54b3541bb6fd17c0274d9a1f12eff6e865f67120",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "yuga: update prop scripts",
 "author_date": "Sat May 18 15:47:20 2013 +0200",
 "author_name": "Giulio Cervera",
@@ -817,7 +817,7 @@
 },
 {
 "body": "add Torch sysfs overlay\n\nChange-Id: I4db5e5c384bb3bc3f83d2cd99fff2abf8bed571e\nSigned-off-by: ChampionSwimmer <android@championswimmer.tk>\n\nbc0ba490be54a8e442b6f3ce9afa56f00faa8d2d",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "add Torch sysfs overlay",
 "author_date": "Sun May 19 11:04:10 2013 +0530",
 "author_name": "ChampionSwimmer",
@@ -829,7 +829,7 @@
 },
 {
 "body": "mint: update prop scripts\n\nChange-Id: I0a607f8cd77aef82c765f14ba8debe7ce397f3ac\n\ne77f91ade660583f71c7c9407b3e4345a645fc1f",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "mint: update prop scripts",
 "author_date": "Sat May 18 15:49:14 2013 +0200",
 "author_name": "Giulio Cervera",
@@ -841,7 +841,7 @@
 },
 {
 "body": "sony: qcom-common: add common prop scripts\n\nChange-Id: I79a48f7019161a05a1d131a5943b4ffb097767bd\n\nd1f2e4303bdb18d0b96e2a6d8d19f4eed36d3c0c",
-"team_credit": "CyanogenMod",
+"team_credit": "No Project Associated",
 "subject": "sony: qcom-common: add common prop scripts",
 "author_date": "Sat May 18 15:42:48 2013 +0200",
 "author_name": "Giulio Cervera",
@@ -853,7 +853,7 @@
 },
 {
 "body": "tsubasa: update prop scripts\n\nChange-Id: Ia08d9f21d82793036861bc4dcfa8d50eb5ff7d3d\n\n76fc5c756c4cacfc31ad5eeb2ec353a82197d9b0",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "tsubasa: update prop scripts",
 "author_date": "Sat May 18 15:50:07 2013 +0200",
 "author_name": "Giulio Cervera",
@@ -865,7 +865,7 @@
 },
 {
 "body": "sony: common: update prop scripts\n\nChange-Id: I7c3d1158df5a379ac551db9ef639acff750192ed\n\nf37964d4bf7762c1eac8364c2307a3c717e44225",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "sony: common: update prop scripts",
 "author_date": "Sat May 18 15:45:58 2013 +0200",
 "author_name": "Giulio Cervera",
@@ -877,7 +877,7 @@
 },
 {
 "body": "Fix some leaks in VfyBasicBlock & BitVector.\n\nChange-Id: I20050135588fc96268911b8ab690b04c8ad949bc\n\nff60c964a2595eeedd627fd22df8f11265303c8a",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Fix some leaks in VfyBasicBlock & BitVector.",
 "author_date": "Thu Apr 4 04:24:20 2013 +0900",
 "author_name": "You Kim",
@@ -889,7 +889,7 @@
 },
 {
 "body": "hercules: update props\n\nChange-Id: I5ea7240ce2a54241a18d0f1558de9a002a0be05f\nSigned-off-by: Jonathan Steadman <xxwhitehawk@gmail.com>\n\nb96059b7ca9caf71cb7e06a515f35c478fecf5e1",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "hercules: update props",
 "author_date": "Fri May 17 17:54:10 2013 -0700",
 "author_name": "Jonathan Steadman",
@@ -901,7 +901,7 @@
 },
 {
 "body": "hercules: update fingerprint to UVMC6\n\nSigned-off-by: Jonathan Steadman <xxwhitehawk@gmail.com>\n\nChange-Id: I252b81574de01370f8387fb1c3eaf85e122097c3\n\n1de19b58d90208a0022bd826202edf2d821ff9fe",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "hercules: update fingerprint to UVMC6",
 "author_date": "Wed May 15 15:43:03 2013 -0700",
 "author_name": "Jonathan Steadman",
@@ -913,7 +913,7 @@
 },
 {
 "body": "DenseChangelog: Account for possibility of a folder in the response\n\nGoo.im recently changed their schema to include a nightlies folder.\nTo account for this change we need a second date check.  If the\nfirst response does not contain \"modified\" key we assume it is\nnot a file and check the second object in the JSONArray response.\nShould we fail a second time its fatal.\n\nPatchSet 2: Account for missing end date.\n\nChange-Id: I22210d4b17374776658b9a5421d8cfc51b9bc4b4\n\n",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "DenseChangelog: Account for possibility of a folder in the response",
 "author_date": "Sun May 5 03:21:12 2013 -0400",
 "author_name": "JBirdVegas",
@@ -925,7 +925,7 @@
 },
 {
 "body": "Targa & Solana: Use targa gps lib to match audio.primary\n\nChange-Id: I11581a5a25ace7082cba4b0de9d0d5a8fd245523\n\n7a08e070259a3a47729b8f396e3340730723028a",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Targa & Solana: Use targa gps lib to match audio.primary",
 "author_date": "Thu May 9 23:39:45 2013 -0500",
 "author_name": "dhacker29",
@@ -937,7 +937,7 @@
 },
 {
 "body": "ThemeManager: DA translation\n\nFrom staging branch\n\nPatchset 3: Review change - hoping Cid plays right\n\nChange-Id: I9d049b596d410d54bd6661ee25768ce9b666da88\n\n0bf6be462bb8cbf0b6f2e7b280d20fc2b7a4c1c3",
-"team_credit": "CyanogenMod",
+"team_credit": "No Project Associated",
 "subject": "ThemeManager: DA translation",
 "author_date": "Tue May 14 20:32:43 2013 +0200",
 "author_name": "Jacob Overgaard Madsen",
@@ -949,7 +949,7 @@
 },
 {
 "body": "vendor_sony: blob updates\n\nblue: cleanup\nblue: modem firmware updates\nfusion3: cleanup\n\nChange-Id: I51fa070170bf6ff23a9ba20e35f61110895298ef\nSigned-off-by: ChampionSwimmer <android@championswimmer.tk>\n\n56965dbcff3e68aa185693dc21f78f384fe8a349",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "vendor_sony: blob updates",
 "author_date": "Sun May 19 12:20:56 2013 +0530",
 "author_name": "Giulio Cervera",
@@ -961,7 +961,7 @@
 },
 {
 "body": "xz: fix put_unaligned_{l,b}e32\n\nSigned-off-by: Leonid Lisovskiy <lly.dev@gmail.com>\nSigned-off-by: Denys Vlasenko <vda.linux@googlemail.com>\n\nSync code with busybox master fix\nSigned-off-by: Tanguy Pruvot <tanguy.pruvot@gmail.com>\n\n",
-"team_credit": "CyanogenMod",
+"team_credit": "No Project Associated",
 "subject": "xz: fix put_unaligned_{l,b}e32",
 "author_date": "Wed Feb 27 18:32:58 2013 +0100",
 "author_name": "Leonid Lisovskiy",
@@ -973,7 +973,7 @@
 },
 {
 "body": "[webkit] WebAudio resources on Android\n\n- Package the 240  WebAudio impulse response resources\nto make them accessible through AssetManager\n- Add mutex implementation in AudioNode\n\nChange-Id: Ibc424063e47d19f9f3cd4349a317d061158360ba\n(cherry picked from commit 870d4b390f74e49b84960cb79b7ff44bf6dd621e)\n\n2e5660619039963f974d2ceea7a50a02439a0766",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "[webkit] WebAudio resources on Android",
 "author_date": "Wed Oct 24 18:50:07 2012 -0400",
 "author_name": "Alex Kuoch",
@@ -985,7 +985,7 @@
 },
 {
 "body": "Bluetooth losing HF connection to car-kit after 5 seconds\n\nThis patch adresses a change in bluetooth which causes a possible\nloss of connection within 5 seconds after connecting.  This new\nbehavior appeared with android 4.2 (4.1.2 worked fine in this regard).\n\nI traced down the disconnects to an BTA_AG_SVC_TOUT_EVT via a timer\nthat checks if a service connection was made within a few seconds.\nEssentially bta_ag_svc_conn_open() was not called on AT+CMER because\nandroid thought the car kit supported 3WAY but the car kit did not\nset the 3WAY flag via AT commands and did not send AT+CHLD either.\nAndroid otoh used the flag obtained by SDP and expected 3WAY behavior\nand eventually disconnected when AT+CHLD did not arrive.\n\nThis may be a bordeline case, because in the Bluetooth Specification\n(page 20), assuming service level initialization via SDP is only\nmentioned on the HF side while there is no such mention (but could\nprobably be implied) on page 21 for the AG.\n\nFact is however, that the use of SDP features value for peer_features\nis new since Android 4.2 and breaks existing good behavior on a BMW\n2005/E46 car kit (navi professional). This kit never asks for AT+CHLD\nand never via AT commands suggests it supports 3WAY (although it seems\nto have the flag set via SDP).\n\nAlso, having essential behavior (like making the connection or not)\ndepend on circumstances that may be prone to race conditions, may be\na good reason to not use the SDP flag also (or at least masking out\nthe 3WAY bit when using it).\n\n(An alternative approach could be to hook into bta_ag_timer_cback() and\nwhen the timer exipres, but when also AT+CMER has been seen meanwhile,\nto continue and assume a service level connection without 3WAY,\ni.e. clearing the 3-way flags but calling bta_ag_svc_conn_open() anyway.)\n\nOriginal author Markus Schmidt <shimodax@gmail.com>\nPS2: Correct Author and Whitspace\n\nSigned-off-by: apophis9283 <steaven.android@gmail.com>\nChange-Id: Ib011ae6a1fb810dda9d851d2f03e8f7234761a89\n\n",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Bluetooth losing HF connection to car-kit after 5 seconds",
 "author_date": "Sat Apr 20 01:29:56 2013 -0400",
 "author_name": "Markus Schmidt",
@@ -997,7 +997,7 @@
 },
 {
 "body": "mGerrit: *Block Diff Viewer on AOSP & Gerrit-Review\n\nApply MonoSpacing to diff viewer\n(https://developer.android.com/reference/android/graphics/Typeface.html#MONOSPACE)\n\n* For now. Seems the api has depreciated without notice\nor new DiffApi's are blocking /revisions/current/patch\nfor AOSP & Gerrit-Review\n* Api's are noted as changing so we may need to wait till\nthey stablize before recoding call revision based api's\n(which return base64)\n\nChange-Id: Icce094e4ed862f4c2c93573df99c151e3387d9ba\n\n5dc0cc1a18f5388342e6fe2fd974882c2cd50477",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "mGerrit: *Block Diff Viewer on AOSP & Gerrit-Review",
 "author_date": "Mon May 20 03:37:08 2013 -0400",
 "author_name": "JBirdVegas",
@@ -1021,7 +1021,7 @@
 },
 {
 "body": "Update copyright to The Linux Foundation\n\nChange-Id: I9c65d453da026d6f9e9cc2f93e03cefd7a3e9093\n\n",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Update copyright to The Linux Foundation",
 "author_date": "Fri Apr 19 11:49:38 2013 -0700",
 "author_name": "Duy Truong",
@@ -1033,7 +1033,7 @@
 },
 {
 "body": "(Optionally) Break Superuser Anti(Android)-Pattern\n\nAs always Superuser prompts user for permission to be root user aka\nSuperuser. However now that we are asking for permission at install\nshould we assume that apps which have been granted su permission via\nPermissions approval list appon install are trusted? I believe so...\n\n/* For */\nApps who do not declare ACCESS_SUPERUSER will get the standard prompt\nbut if the user specified the ACCESS_SUPERUSER permission during\ninstall they are allowing su access.\nThe anti-pattern is because no other features prompt user in Win*\nstyle mannor except the newly annointed ACCESS_SUPERUSER.\nMaybe this needs to only apply to device owner or some other qualifiers\nbut many root apps will not function correctly without root. User\nallowed root access via permissions so why ask and potentially break\napk due to timeout or such\n\n/* Against */\nIts root I want to know whats going on in my device (do we really know?\nwe are prompted without knowing the command)\n\n/* Notes */\nPrompts from Superuser are generic at best. We (users) get very\nlittle real information to make our Allow/Denial choice except\nPackageName anyways. User decided to install it and accepted the\nwarnings during the installation.\n\n*****\nJust a quick patch instead of a large/long internal group email debate...\nLet me know your thoughts via +1/-1 but leave your reasoning please.\n\nPatch Set 2: don't crash managed socket\nPatch Set 3: Allow user configuration of permission trust\n\nChange-Id: I48770019f00b1410820e9c63e98336d466f1f344\n\n",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "(Optionally) Break Superuser Anti(Android)-Pattern",
 "author_date": "Thu Mar 28 02:26:13 2013 -0400",
 "author_name": "JBirdVegas",
@@ -1057,7 +1057,7 @@
 },
 {
 "body": "init: Load init.carrier.rc for carrier-specific bits\n\nChange-Id: I941230f035182e27bd62316b594ac457316c37b6\n\n",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "init: Load init.carrier.rc for carrier-specific bits",
 "author_date": "Tue Apr 30 23:32:15 2013 -0700",
 "author_name": "Steve Kondik",
@@ -1069,7 +1069,7 @@
 },
 {
 "body": "Update to 4.2.2_r1.2\n\nChange-Id: I8d51a4c964a83c4b65bbb119773dabb36fdd0b4e\n\n96b8e744bd7297e59e459c46e070c555011bee38",
-"team_credit": "AOKP",
+"team_credit": "No Project Associated",
 "subject": "Update to 4.2.2_r1.2",
 "author_date": "Fri May 17 19:07:12 2013 -0500",
 "author_name": "akellar",
@@ -1078,5 +1078,101 @@
 "commit_hash": "\nd9ee01df204366cffb926430b39e4927351acbc9",
 "parent_hashes": "96b8e744bd7297e59e459c46e070c555011bee38",
 "committer_name": "akellar"
+},
+{
+"body": "Update to 4.2.2_r1.2\n\nChange-Id: I8d51a4c964a83c4b65bbb119773dabb36fdd0b4e\n\n96b8e744bd7297e59e459c46e070c555011bee38",
+"team_credit": "No Project Associated",
+"subject": "Update to 4.2.2_r1.2",
+"author_date": "Fri May 17 19:07:12 2013 -0500",
+"author_name": "akellar",
+"path": "platform_manifest",
+"committer_date": "Fri May 17 19:07:12 2013 -0500",
+"commit_hash": "\nd9ee01df204366cffb926430b39e4927351acbc9",
+"parent_hashes": "96b8e744bd7297e59e459c46e070c555011bee38",
+"committer_name": "akellar"
+},
+{
+"body": "Intern CacheHeader keys and values to avoid string duplication\n\nWe found that Volley generated about 20 strings per cached item (~9000\nstrings for ~440 cached items) and most of these were duplicates. This\nchange interns the key and value strings to avoid duplication. This saved\nabout 500kb for our scenario (440 images cached.)\n\nd5b43f12ca1770b637594d201899a37e75655f6d",
+"team_credit": "No Project Associated",
+"subject": "Intern CacheHeader keys and values to avoid string duplication",
+"author_date": "Fri May 10 11:42:47 2013 -0700",
+"author_name": "David Braun",
+"path": "",
+"committer_date": "Fri May 10 11:42:47 2013 -0700",
+"commit_hash": "\nab6ea086d1bfe6387c35270d48be1a5c0567d7d3",
+"parent_hashes": "f98ecec320d95adbed2d224d42cf96d6a88f16f3",
+"committer_name": "David Braun"
+},
+{
+"body": "Updated readme to reflect fixing the bug in intellij for not finding java.lang.AutoCloseable as it's no longer an issue\n\n51dede5be0979669464e2eb24d958de84884113e",
+"team_credit": "No Project Associated",
+"subject": "Updated readme to reflect fixing the bug in intellij for not finding java.lang.AutoCloseable as it's no longer an issue",
+"author_date": "Mon May 6 15:20:23 2013 -0400",
+"author_name": "yareallyyareally",
+"path": "Java7-on-Android",
+"committer_date": "Mon May 6 15:20:23 2013 -0400",
+"commit_hash": "\n4da4b655f36e1d2da01cd01fb59e4ff899c3c614",
+"parent_hashes": "6ceb33a6845cc3306e082f5bac16568e1c9b7a02",
+"committer_name": "yareallyyareally"
+},
+{
+"body": "Add \"Ragnabase MVP\"\n\n",
+"team_credit": "No Project Associated",
+"subject": "Add \"Ragnabase MVP\"",
+"author_date": "Wed Apr 17 17:08:03 2013 +0800",
+"author_name": "Prototik",
+"path": "HoloEverywhere",
+"committer_date": "Wed Apr 17 17:08:40 2013 +0800",
+"commit_hash": "\nf55aaeb1d3208c8ebd8d05bf9dba7a58132123c3",
+"parent_hashes": "e5d19bb6e7a51b9be77ca14504752c398da1df5c",
+"committer_name": "Prototik"
+},
+{
+"body": "Set python version back to 2.6.5 in .pydevproject\n\nWhen I fixed some unused imports in 0c0040b I did `git commit -a`\nand pushed without realising that Eclipse had changed the Python\nversion in the PyDev project config.\n\nThis change sets the version back to 2.6.5 which is the minimum\nversion required to run the python scripts in the Buck build.\n\nChange-Id: Idc97af3d01999889d9b1a818fbd1bbe0b274dcf3\n\n584af674faca503fac723b2d30081ecebb0c1d4b",
+"team_credit": "No Project Associated",
+"subject": "Set python version back to 2.6.5 in .pydevproject",
+"author_date": "Mon May 20 11:34:42 2013 +0900",
+"author_name": "David Pursehouse",
+"path": "gerrit",
+"committer_date": "Mon May 20 11:36:08 2013 +0900",
+"commit_hash": "\n77e974c7070e274aaca3f2413a3fb53031d0f50e",
+"parent_hashes": "584af674faca503fac723b2d30081ecebb0c1d4b",
+"committer_name": "David Pursehouse"
+},
+{
+"body": "make text color persistant\n\nAllow return to default\nmake color picker a floating dialog without a background\nfix default color not show as white\n\nbc95a2315e6e9913b1c5c3d360c79ca4600731e4",
+"team_credit": "No Project Associated",
+"subject": "make text color persistant",
+"author_date": "Tue Apr 30 16:35:13 2013 -0400",
+"author_name": "JBirdVegas",
+"path": "hilsons",
+"committer_date": "Tue Apr 30 16:35:13 2013 -0400",
+"commit_hash": "\n73720b6128cfe370940172250e9ab0b00f1dc2ed",
+"parent_hashes": "bc95a2315e6e9913b1c5c3d360c79ca4600731e4",
+"committer_name": "JBirdVegas"
+},
+{
+"body": "mGerrit release key\n\n",
+"team_credit": "No Project Associated",
+"subject": "mGerrit release key",
+"author_date": "Fri Apr 19 16:41:22 2013 -0400",
+"author_name": "JBirdVegas",
+"path": "keys",
+"committer_date": "Fri Apr 19 16:41:22 2013 -0400",
+"commit_hash": "\n393d0931a83000a62437a4363796ab31609ef8a4",
+"parent_hashes": "",
+"committer_name": "JBirdVegas"
+},
+{
+"body": "Fix whitespace in license text\n\n",
+"team_credit": "No Project Associated",
+"subject": "Fix whitespace in license text",
+"author_date": "Thu Apr 25 04:37:01 2013 +0300",
+"author_name": "cketti",
+"path": "HoloColorPicker",
+"committer_date": "Thu Apr 25 04:37:01 2013 +0300",
+"commit_hash": "\naa3c255ec639696d09a30125049465d3c17ba9ec",
+"parent_hashes": "2757d166b40a75aea0b309c3b590567d8313ca59",
+"committer_name": "cketti"
 }
 ]
